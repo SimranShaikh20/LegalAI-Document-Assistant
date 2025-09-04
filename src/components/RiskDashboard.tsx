@@ -251,7 +251,7 @@ const RiskDashboard = () => {
                     For complex issues or detailed contract review, connect with our network of qualified attorneys.
                   </p>
                   
-                  <Button variant="default" className="w-full">
+                  <Button variant="default" className="w-full hover:shadow-lg transition-smooth font-medium">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Consult Legal Expert
                   </Button>
@@ -266,13 +266,13 @@ const RiskDashboard = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
                       Download Summary
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
                       Share Analysis
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
                       Save to Library
                     </Button>
                   </div>

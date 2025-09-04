@@ -32,11 +32,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="secondary" size="lg" className="group">
+              <Button variant="secondary" size="lg" className="group font-semibold px-8 py-4 text-lg">
                 Start Analysis
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
+              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg">
                 Watch Demo
               </Button>
             </div>

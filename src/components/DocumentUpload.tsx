@@ -178,6 +178,7 @@ const DocumentUpload = () => {
                     <Button 
                       variant="outline" 
                       onClick={() => document.getElementById('file-upload')?.click()}
+                      className="hover:bg-primary hover:text-white transition-smooth font-medium px-6"
                     >
                       Choose Files
                     </Button>
@@ -192,16 +193,16 @@ const DocumentUpload = () => {
                       disabled={isAnalyzing}
                       variant="default"
                       size="lg"
-                      className="w-full"
+                      className="w-full font-semibold py-4 text-lg hover:shadow-xl transition-smooth disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isAnalyzing ? (
                         <>
-                          <Clock className="w-4 h-4 mr-2 animate-spin" />
+                          <Clock className="w-5 h-5 mr-2 animate-spin" />
                           Analyzing Documents...
                         </>
                       ) : (
                         <>
-                          <FileText className="w-4 h-4 mr-2" />
+                          <FileText className="w-5 h-5 mr-2" />
                           Start AI Analysis
                         </>
                       )}

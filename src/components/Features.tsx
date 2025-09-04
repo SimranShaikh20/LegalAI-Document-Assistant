@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { 
   Brain, 
   Shield, 
@@ -173,12 +174,12 @@ const Features = () => {
                 for faster, more accurate document analysis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-6 py-3 gradient-primary text-white rounded-lg hover:shadow-lg transition-smooth">
+                <Button variant="default" size="lg" className="font-semibold px-8 py-4 hover:shadow-xl transition-smooth">
                   Start Free Trial
-                </button>
-                <button className="px-6 py-3 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-white transition-smooth">
+                </Button>
+                <Button variant="outline" size="lg" className="font-semibold px-8 py-4 hover:bg-primary hover:text-white transition-smooth">
                   Schedule Demo
-                </button>
+                </Button>
               </div>
             </div>
           </Card>
