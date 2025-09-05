@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Shield, FileText, Scale, Users } from "lucide-react";
+import { ArrowRight, Shield, FileText, Scale, Users, Play, X } from "lucide-react";
+import DocumentUpload from "./DocumentUpload";
+import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const [showUpload, setShowUpload] = useState(false);
+  const { toast } = useToast();
   return (
     <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
       {/* Background Pattern */}
@@ -32,11 +37,27 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group font-semibold px-8 py-4 text-lg bg-white text-blue-700 hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all">
+              <Button 
+                size="lg" 
+                className="group font-semibold px-8 py-4 text-lg bg-white text-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
+                style={{ color: 'white', backgroundColor: 'hsl(217, 91%, 25%)' }}
+                onClick={() => setShowUpload(true)}
+              >
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg backdrop-blur-sm">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg backdrop-blur-sm"
+                onClick={() => {
+                  toast({
+                    title: "Demo Coming Soon!",
+                    description: "Our interactive demo will be available shortly. Start analyzing your documents now!",
+                  });
+                }}
+              >
+                <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </Button>
             </div>
@@ -107,6 +128,23 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Document Upload Modal */}
+      {showUpload && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <Button
+              variant="outline"
+              size="sm"
+              className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:bg-gray-100"
+              onClick={() => setShowUpload(false)}
+            >
+              <X className="w-4 h-4" />
+            </Button>
+            <DocumentUpload />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
