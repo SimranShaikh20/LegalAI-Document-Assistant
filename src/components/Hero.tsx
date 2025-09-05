@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Shield, FileText, Scale, Users, Play, X } from "lucide-react";
+import { ArrowRight, Shield, FileText, Scale, Users, X } from "lucide-react";
 import DocumentUpload from "./DocumentUpload";
 import { useToast } from "@/hooks/use-toast";
 
@@ -45,20 +45,6 @@ const Hero = () => {
               >
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg backdrop-blur-sm"
-                onClick={() => {
-                  toast({
-                    title: "Demo Coming Soon!",
-                    description: "Our interactive demo will be available shortly. Start analyzing your documents now!",
-                  });
-                }}
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Watch Demo
               </Button>
             </div>
 
