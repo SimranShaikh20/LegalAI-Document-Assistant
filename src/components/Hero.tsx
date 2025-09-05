@@ -32,11 +32,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="secondary" size="lg" className="group font-semibold px-8 py-4 text-lg">
+              <Button size="lg" className="group font-semibold px-8 py-4 text-lg bg-white text-blue-700 hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all">
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg">
+              <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg backdrop-blur-sm">
                 Watch Demo
               </Button>
             </div>
@@ -60,42 +60,42 @@ const Hero = () => {
 
           {/* Hero Visual */}
           <div className="relative">
-            <Card className="p-8 shadow-professional bg-white/95 backdrop-blur-sm">
+            <Card className="p-8 shadow-professional bg-white backdrop-blur-sm border-white/20">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-semibold text-foreground">Document Analysis</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Document Analysis</h3>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                    <span className="text-sm text-muted-foreground">Processing</span>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-gray-600">Processing</span>
                   </div>
                 </div>
 
                 {/* Mock Analysis Results */}
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-success-light rounded-lg">
-                    <span className="text-sm font-medium">Contract Terms</span>
-                    <span className="px-2 py-1 bg-success text-success-foreground text-xs rounded-full">Low Risk</span>
+                  <div className="flex items-center justify-between p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
+                    <span className="text-sm font-medium text-gray-900">Contract Terms</span>
+                    <span className="px-2 py-1 bg-emerald-500 text-white text-xs rounded-full font-medium">Low Risk</span>
                   </div>
                   
-                  <div className="flex items-center justify-between p-3 bg-warning-light rounded-lg">
-                    <span className="text-sm font-medium">Payment Clauses</span>
-                    <span className="px-2 py-1 bg-warning text-warning-foreground text-xs rounded-full">Medium Risk</span>
+                  <div className="flex items-center justify-between p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                    <span className="text-sm font-medium text-gray-900">Payment Clauses</span>
+                    <span className="px-2 py-1 bg-amber-500 text-white text-xs rounded-full font-medium">Medium Risk</span>
                   </div>
                   
-                  <div className="flex items-center justify-between p-3 bg-accent rounded-lg">
-                    <span className="text-sm font-medium">Liability Terms</span>
-                    <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">Reviewed</span>
+                  <div className="flex items-center justify-between p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                    <span className="text-sm font-medium text-gray-900">Liability Terms</span>
+                    <span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full font-medium">Reviewed</span>
                   </div>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Analysis Progress</span>
-                    <span className="text-primary font-medium">87%</span>
+                    <span className="text-gray-600">Analysis Progress</span>
+                    <span className="text-blue-600 font-medium">87%</span>
                   </div>
-                  <div className="w-full bg-secondary rounded-full h-2">
-                    <div className="gradient-primary h-2 rounded-full transition-all duration-1000" style={{ width: '87%' }}></div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2 rounded-full transition-all duration-1000" style={{ width: '87%' }}></div>
                   </div>
                 </div>
               </div>
