@@ -15,14 +15,14 @@ const Hero = () => {
           {/* Hero Content */}
           <div className="text-white space-y-8">
             <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-primary-light">
+              <div className="flex items-center space-x-2 text-white">
                 <Shield className="w-5 h-5" />
                 <span className="text-sm font-semibold tracking-wide uppercase">AI-Powered Legal Intelligence</span>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
                 Simplify
-                <span className="block text-primary-light">Legal Documents</span>
+                <span className="block text-white">Legal Documents</span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl">
