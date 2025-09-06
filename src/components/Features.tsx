@@ -174,9 +174,6 @@ const Features = () => {
                 for faster, more accurate document analysis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" className="font-semibold px-8 py-4 hover:shadow-xl transition-smooth">
-                  Start Free Trial
-                </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
