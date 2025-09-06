@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { 
   AlertTriangle, 
   CheckCircle, 
@@ -9,7 +10,9 @@ import {
   FileText, 
   Shield,
   ExternalLink,
-  Download
+  Download,
+  Share,
+  BookOpen
 } from "lucide-react";
 
 interface RiskItem {
@@ -23,6 +26,8 @@ interface RiskItem {
 }
 
 const RiskDashboard = () => {
+  const { toast } = useToast();
+  
   const analysisData = {
     overallRisk: 'medium',
     confidence: 94,
@@ -122,6 +127,106 @@ const RiskDashboard = () => {
       default:
         return 'text-muted-foreground';
     }
+  };
+
+  const handleDownloadSummary = () => {
+    // Create a summary document content
+    const summaryContent = `LEGAL DOCUMENT ANALYSIS SUMMARY
+========================================
+
+Overall Risk Assessment: ${analysisData.overallRisk.toUpperCase()}
+Confidence Score: ${analysisData.confidence}%
+Processing Time: ${analysisData.processingTime}
+Total Issues Found: ${analysisData.totalIssues}
+
+DETAILED FINDINGS:
+${riskItems.map((item, index) => `
+${index + 1}. ${item.title} (${item.severity.toUpperCase()} RISK)
+   Section: ${item.section}
+   Category: ${item.category}
+   Description: ${item.description}
+   Recommendation: ${item.recommendation}
+`).join('')}
+
+DISCLAIMER:
+This analysis provides guidance only and does not constitute legal advice. 
+For legal decisions, please consult with a qualified attorney.
+
+Generated on: ${new Date().toLocaleDateString()}
+`;
+
+    const blob = new Blob([summaryContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `legal-analysis-summary-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    toast({
+      title: "Summary Downloaded",
+      description: "Your legal analysis summary has been downloaded successfully.",
+    });
+  };
+
+  const handleShareAnalysis = () => {
+    const shareText = `Legal Document Analysis Results:
+Overall Risk: ${analysisData.overallRisk.toUpperCase()}
+Confidence: ${analysisData.confidence}%
+Issues Found: ${analysisData.totalIssues}
+
+View full analysis for detailed insights and recommendations.`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: 'Legal Document Analysis',
+        text: shareText,
+        url: window.location.href
+      }).catch(() => {
+        fallbackShare(shareText);
+      });
+    } else {
+      fallbackShare(shareText);
+    }
+  };
+
+  const fallbackShare = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast({
+        title: "Analysis Copied",
+        description: "Analysis summary copied to clipboard. You can now share it!",
+      });
+    }).catch(() => {
+      toast({
+        title: "Share Analysis",
+        description: "Use your browser's share function to share this analysis.",
+        variant: "destructive",
+      });
+    });
+  };
+
+  const handleSaveToLibrary = () => {
+    // Simulate saving to library
+    const savedAnalysis = {
+      id: Date.now().toString(),
+      timestamp: new Date().toISOString(),
+      overallRisk: analysisData.overallRisk,
+      confidence: analysisData.confidence,
+      totalIssues: analysisData.totalIssues,
+      riskItems: riskItems
+    };
+
+    // Save to localStorage as a simple implementation
+    const savedAnalyses = JSON.parse(localStorage.getItem('savedAnalyses') || '[]');
+    savedAnalyses.push(savedAnalysis);
+    localStorage.setItem('savedAnalyses', JSON.stringify(savedAnalyses));
+
+    toast({
+      title: "Saved to Library",
+      description: "This analysis has been saved to your personal library for future reference.",
+    });
   };
 
   return (
@@ -266,13 +371,28 @@ const RiskDashboard = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start hover:bg-primary hover:text-white transition-smooth"
+                      onClick={handleDownloadSummary}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
                       Download Summary
                     </Button>
-                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start hover:bg-primary hover:text-white transition-smooth"
+                      onClick={handleShareAnalysis}
+                    >
+                      <Share className="w-4 h-4 mr-2" />
                       Share Analysis
                     </Button>
-                    <Button variant="outline" className="w-full justify-start hover:bg-primary hover:text-white transition-smooth">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start hover:bg-primary hover:text-white transition-smooth"
+                      onClick={handleSaveToLibrary}
+                    >
+                      <BookOpen className="w-4 h-4 mr-2" />
                       Save to Library
                     </Button>
                   </div>
