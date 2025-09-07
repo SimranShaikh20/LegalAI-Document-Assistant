@@ -246,19 +246,6 @@ npm run type-check   # Run TypeScript checks
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Support & Contact
-
-- **📅 Demo Booking** - [Schedule a personalized demonstration via Calendly](https://calendly.com/your-calendly-link)
-- **📧 Support Email** - contact@legaldocanalysis.com  
-- **🌐 Website** - www.legaldocanalysis.com
-- **💼 LinkedIn** - [Company Profile]
-- **📚 Documentation** - Comprehensive guides and API documentation
-
-### Quick Links
-- **🎯 Book Demo** - Direct Calendly integration for immediate scheduling
-- **❓ FAQ** - Common questions and answers
-- **🛠 Technical Support** - Platform assistance and troubleshooting
-
 ## 🙏 Acknowledgments
 
 Built with modern web technologies and best practices to deliver a professional, scalable solution for the legal industry.
