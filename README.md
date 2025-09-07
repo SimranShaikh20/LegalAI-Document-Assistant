@@ -42,7 +42,7 @@ The Legal Document Analysis AI Platform combines cutting-edge artificial intelli
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SimranShaikh20/LegalAI-Legal-Document-AI-Assistant.git
+   git clone https://github.com/SimranShaikh20/LegalAI-Document-Assistant.git
    cd legal-document-analysis-ai
    ```
 
