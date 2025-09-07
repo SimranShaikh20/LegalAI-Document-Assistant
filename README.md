@@ -21,6 +21,8 @@
 
 The Legal Document Analysis AI Platform combines cutting-edge artificial intelligence with intuitive user experience to deliver faster, more accurate document analysis. Our platform reduces manual review time by up to 80% while maintaining consistent accuracy and comprehensive risk assessment.
 
+![Sample Image](images/image2.png)
+
 ### 🌟 Key Features
 
 - 🤖 **AI-Powered Analysis** - Advanced NLP for intelligent document comprehension
@@ -105,6 +107,8 @@ src/
 - Interactive analysis breakdown
 - Export, sharing, and library save functionality
 
+![Sample Image](images/image1.png)
+
 ## 🛠 Technology Stack
 
 ### Frontend Framework
@@ -147,6 +151,9 @@ src/
   - Performance metrics and KPIs
   - Dispute resolution mechanisms
 
+
+![Sample Image](images/image4.png)
+
 ### User Workflow
 
 1. **Document Upload** - Drag & drop or browse to select legal documents
@@ -179,6 +186,10 @@ src/
    - Risk score: 0-100 scale
    - Color-coded indicators
    - Detailed recommendations
+
+
+![Sample Image](images/image3.png)
+
 
 ### Risk Score Interpretation
 
