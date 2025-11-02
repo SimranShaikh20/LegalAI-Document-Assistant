@@ -16,26 +16,15 @@ export const VideoDemo = () => {
 
         <div className="mx-auto max-w-5xl">
           <Card className="overflow-hidden border-2 shadow-xl">
-            <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-primary/5">
-              {/* Placeholder for video - can be replaced with actual video URL */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/20 backdrop-blur-sm transition-transform hover:scale-110 hover:bg-primary/30">
-                  <Play className="h-10 w-10 text-primary" fill="currentColor" />
-                </div>
-                <p className="text-lg font-medium text-muted-foreground">Demo Video</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Watch the complete walkthrough
-                </p>
-              </div>
-              
-              {/* You can replace the above with an actual video embed like: */}
-              {/* <iframe
-                className="absolute inset-0 h-full w-full"
-                src="YOUR_VIDEO_URL"
-                title="LegalPro AI Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              /> */}
+            <div className="relative aspect-video">
+              <video
+                className="h-full w-full rounded-lg object-cover"
+                controls
+                poster="/videos/poster.jpg"
+              >
+                <source src="/videos/demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </Card>
 
