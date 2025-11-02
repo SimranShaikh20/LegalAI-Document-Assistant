@@ -92,6 +92,7 @@ Provide your analysis in JSON format with these fields:
 
     console.log('Calling Gemini API for document analysis...');
     
+    // Use a low temperature to make the model output more deterministic for structured JSON
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
       {
@@ -101,14 +102,13 @@ Provide your analysis in JSON format with these fields:
         },
         body: JSON.stringify({
           contents: [{
-            parts: [{
-              text: prompt
-            }]
+            parts: [{ text: prompt }]
           }],
           generationConfig: {
-            temperature: 0.7,
-            topK: 40,
-            topP: 0.95,
+            // reduce randomness to encourage consistent JSON outputs
+            temperature: 0.0,
+            topK: 1,
+            topP: 0.8,
             maxOutputTokens: 2048,
           }
         }),
@@ -138,17 +138,37 @@ Provide your analysis in JSON format with these fields:
       );
     }
 
-    // Try to parse the JSON response
-    let analysisResult;
+    // Try to parse the JSON response robustly
+    let analysisResult: any = null;
     try {
-      // Remove markdown code blocks if present
+      // Attempt to extract first {...} JSON object block from the generated text
       const cleanedText = generatedText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-      analysisResult = JSON.parse(cleanedText);
+
+      // Find the first JSON object boundaries
+      const firstBrace = cleanedText.indexOf('{');
+      const lastBrace = cleanedText.lastIndexOf('}');
+      let jsonText = cleanedText;
+
+      if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+        jsonText = cleanedText.substring(firstBrace, lastBrace + 1);
+      }
+
+      analysisResult = JSON.parse(jsonText);
     } catch (e) {
       console.error('Failed to parse Gemini response as JSON:', e);
-      // Return raw text if JSON parsing fails
+      // As a better fallback than a constant score, derive a simple heuristic based on keywords
+      const riskKeywords = ['breach', 'penalty', 'liability', 'indemnify', 'terminate', 'unfair', 'unenforceable', 'fine', 'damages', 'default', 'penalties'];
+      const lowered = generatedText.toLowerCase();
+      let matches = 0;
+      for (const kw of riskKeywords) {
+        if (lowered.includes(kw)) matches += 1;
+      }
+
+      // Heuristic mapping: base 20 + 15 per matched keyword, capped at 95
+      const heuristicScore = Math.min(95, 20 + matches * 15);
+
       analysisResult = {
-        overallRiskScore: 50,
+        overallRiskScore: heuristicScore,
         executiveSummary: generatedText.substring(0, 500),
         keyFindings: [],
         complianceIssues: [],
