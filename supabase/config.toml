@@ -1,4 +1,16 @@
-project_id = "vstwddyajcnmpihwsfls"
+project_id = "qwziybtygvwqhftlfwof"
 
 [functions.analyze-document]
+verify_jwt = false
+
+[functions.voice-qa]
+verify_jwt = false
+
+[functions.chatbot]
+verify_jwt = false
+
+[functions.parse-document]
+verify_jwt = false
+
+[functions.schedule-meeting]
 verify_jwt = false
