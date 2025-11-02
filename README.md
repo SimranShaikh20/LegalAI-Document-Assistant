@@ -1,195 +1,187 @@
 # Legal Document Analysis AI Platform
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-18.0-blue?style=for-the-badge&logo=react" alt="React 18" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Vite-4.0-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
-</p>
+> Transform your legal workflow with AI-powered document analysis, multi-language support, and expert legal network integration.
+
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://your-demo-url.lovable.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Latest-blue)](https://www.typescriptlang.org/)
 
 <p align="center">
-  <strong>Transforming Legal Document Review with Artificial Intelligence</strong>
+  <img src="images/image2.png" alt="Legal Document Analysis Platform" />
 </p>
+
+## 🎯 Overview
+
+The Legal Document Analysis AI Platform is a cutting-edge solution that leverages artificial intelligence to analyze legal documents, identify risks, and provide actionable insights. Built for legal professionals, businesses, and individuals who need fast, accurate document review without compromising on quality.
+
+### 🌟 Key Highlights
+
+- **AI-Powered Analysis**: Advanced NLP identifies key clauses, risks, and opportunities in seconds
+- **Multi-Language Support**: Analyze documents in English, Hindi (हिंदी), and Gujarati (ગુજરાતી)
+- **Real-time Translation**: Automatic translation powered by Google Translate API
+- **Risk Scoring**: Intelligent risk assessment with detailed breakdown
+- **Expert Network**: Direct connection to qualified attorneys via Calendly
+- **Bank-Level Security**: End-to-end encryption with automatic data deletion
+- **Instant Results**: Comprehensive analysis in under 2 minutes
+
+## ✨ Features
+
+### Core Functionality
+
+#### 🤖 AI Document Analysis
+- **Gemini AI Integration**: Powered by Google's Gemini 2.0 Flash for accurate legal analysis
+- **Risk Assessment**: Automated risk scoring (0-100 scale)
+- **Clause Extraction**: Identifies critical clauses and obligations
+- **Compliance Check**: Flags potential regulatory issues
+- **Actionable Recommendations**: Provides specific guidance for improvement
+
+#### 🌐 Multi-Language Support
+- **Supported Languages**:
+  - English (en)
+  - Hindi - हिंदी (hi)
+  - Gujarati - ગુજરાતી (gu)
+- **Auto-Translation**: Documents automatically translated to English for analysis
+- **Language Detection**: Smart detection of document language
+- **Preserved Context**: Translation maintains legal terminology accuracy
+
+#### 📊 Risk Dashboard
+- **Visual Risk Breakdown**: Interactive charts showing risk distribution
+- **Category Analysis**: Risks grouped by contract terms, compliance, financial impact
+- **Severity Levels**: Color-coded risk indicators (High, Medium, Low)
+- **Historical Tracking**: Monitor risk trends over time
 
 <p align="center">
-  An advanced AI-powered legal document analysis platform that revolutionizes how legal professionals review, analyze, and manage legal documents through intelligent automation.
+  <img src="images/image1.png" alt="Risk Dashboard" />
 </p>
 
----
+#### 📄 Document Management
+- **Drag & Drop Upload**: Easy file upload interface
+- **Supported Formats**: PDF, DOC, DOCX (up to 10MB)
+- **Batch Processing**: Analyze multiple documents simultaneously
+- **Secure Storage**: Temporary storage with automatic deletion post-analysis
 
-## 🎯 Project Overview
+#### 👨‍⚖️ Expert Consultation
+- **Legal Expert Network**: Connect with qualified attorneys
+- **Calendly Integration**: Easy scheduling at [calendly.com/msusimran20/30min](https://calendly.com/msusimran20/30min)
+- **30-Minute Sessions**: Focused consultation for complex issues
+- **Follow-up Support**: Ongoing guidance when needed
 
-The Legal Document Analysis AI Platform combines cutting-edge artificial intelligence with intuitive user experience to deliver faster, more accurate document analysis. Our platform reduces manual review time by up to 80% while maintaining consistent accuracy and comprehensive risk assessment.
+#### 🎥 Demo & Onboarding
+- **Interactive Demo Video**: Learn platform features quickly
+- **Step-by-Step Guides**: Comprehensive documentation
+- **Video Tutorials**: Visual learning resources
 
-![Sample Image](images/image2.png)
+### Security & Compliance
 
-### 🌟 Key Features
+- ✅ **End-to-End Encryption**: All documents encrypted in transit and at rest
+- ✅ **Auto-Deletion**: Files automatically removed after analysis
+- ✅ **No Data Retention**: Zero storage of sensitive legal information
+- ✅ **GDPR Compliant**: Follows data protection regulations
+- ✅ **Secure API Integration**: Industry-standard authentication
 
-- 🤖 **AI-Powered Analysis** - Advanced NLP for intelligent document comprehension
-- ⚡ **Speed & Efficiency** - 80% reduction in initial review time
-- 🎯 **Risk Assessment** - Automated 0-100 risk scoring system
-- 📊 **Comprehensive Insights** - Detailed analysis with visual dashboards
-- 🔄 **Seamless Integration** - Professional workflow incorporation
-- 📱 **Responsive Design** - Mobile-first, accessible interface
+<p align="center">
+  <img src="images/image4.png" alt="Security Features" />
+</p>
 
-## 🚀 Quick Start
+## 🛠️ Technology Stack
+
+### Frontend
+- **React 18.3.1**: Modern UI framework
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling
+- **Vite**: Fast build tool
+- **Shadcn/ui**: Beautiful component library
+- **Lucide Icons**: Clean, consistent iconography
+
+### Backend & Services
+- **Lovable Cloud**: Backend infrastructure
+- **Supabase**: Database and authentication
+- **Edge Functions**: Serverless backend logic
+
+### AI & APIs
+- **Google Gemini 2.0 Flash**: Document analysis
+- **Google Translate API**: Multi-language support
+- **Calendly API**: Expert scheduling
+
+### Additional Libraries
+- **Recharts**: Data visualization
+- **React Hook Form**: Form management
+- **Zod**: Schema validation
+- **TanStack Query**: Data fetching
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18.0 or higher
-- npm or yarn package manager
-- Modern web browser
+- Node.js 18+ or Bun
+- npm, yarn, or bun package manager
+- Google Gemini API Key
+- Google Translate API Key
 
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/SimranShaikh20/LegalAI-Document-Assistant.git
-   cd legal-document-analysis-ai
-   ```
+```bash
+git clone https://github.com/SimranShaikh20/LegalAI-Document-Assistant.git
+cd legal-document-analysis-ai
+```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 🏗 Architecture Overview
-
-### Project Structure
-
-```
-src/
-├── components/           # Reusable React components
-│   ├── ui/              # Base UI components (shadcn/ui)
-│   ├── Hero.tsx         # Landing page hero section
-│   ├── Features.tsx     # Platform features showcase
-│   ├── DocumentUpload.tsx # Document upload interface
-│   └── RiskDashboard.tsx # Analysis results dashboard
-├── pages/               # Page components
-│   ├── Index.tsx        # Main landing page
-│   └── NotFound.tsx     # 404 error page
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
-└── styles/              # Global styles and design tokens
+```bash
+npm install
+# or
+bun install
 ```
 
-### Core Components
+3. **Set up environment variables**
 
-#### 🎨 Hero Component
-- Responsive hero section with professional styling
-- Dynamic typography and gradient backgrounds
-- Primary call-to-action for document analysis
+The project uses Lovable Cloud for backend services. Environment variables are automatically configured:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_SUPABASE_PROJECT_ID`
 
-#### 📋 Features Component
-- Grid-based feature showcase
-- Color-coded feature categories
-- Integrated Calendly scheduling for demos
+4. **Configure API Keys**
 
-#### 📄 DocumentUpload Component
-- Drag-and-drop file upload interface
-- Support for PDF, DOC, DOCX, TXT formats
-- Real-time upload progress indicators
+Add the following secrets via Lovable Cloud dashboard:
+- `GEMINI_API_KEY`: Your Google Gemini API key
+- `GOOGLE_TRANSLATE_API_KEY`: Your Google Translate API key
 
-#### 📊 RiskDashboard Component
-- Comprehensive risk scoring visualization
-- Interactive analysis breakdown
-- Export, sharing, and library save functionality
+To obtain API keys:
+- **Gemini API**: Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+- **Google Translate**: Visit [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 
-![Sample Image](images/image1.png)
+5. **Run the development server**
+```bash
+npm run dev
+# or
+bun run dev
+```
 
-## 🛠 Technology Stack
+6. **Open your browser**
+Navigate to `http://localhost:8080`
 
-### Frontend Framework
-- **React 18** - Latest React with concurrent features
-- **TypeScript** - Type-safe development
-- **Vite** - Fast build tool and development server
+## 📖 Usage Guide
 
-### Styling & UI
-- **Tailwind CSS** - Utility-first CSS framework
-- **Radix UI** - Accessible component primitives
-- **shadcn/ui** - Pre-built component library
-- **Lucide React** - Modern icon library
+### Uploading Documents
 
-### State Management & Routing
-- **TanStack Query** - Server state management
-- **React Router DOM** - Client-side routing
-- **React Hooks** - Local component state
+1. **Select Language**: Choose document language (English, Hindi, or Gujarati)
+2. **Upload File**: Drag and drop or click to browse
+3. **Review Files**: Check uploaded documents list
+4. **Start Analysis**: Click "Start AI Analysis" button
 
-## 📊 Platform Capabilities
+<p align="center">
+  <img src="images/image3.png" alt="Document Upload" />
+</p>
 
-### Risk Assessment Categories
+### Understanding Analysis Results
 
-- **🔒 Contract Terms Analysis**
-  - Liability and indemnification clauses
-  - Payment terms and conditions
-  - Performance obligations
-
-- **⚖️ Compliance Verification**
-  - Regulatory requirement adherence
-  - Industry standard compliance
-  - Legal precedent alignment
-
-- **💰 Financial Risk Assessment**
-  - Cost implications and exposures
-  - Payment schedule analysis
-  - Insurance and bonding requirements
-
-- **🏢 Operational Risk Review**
-  - Timeline and delivery requirements
-  - Performance metrics and KPIs
-  - Dispute resolution mechanisms
-
-
-![Sample Image](images/image4.png)
-
-### User Workflow
-
-1. **Document Upload** - Drag & drop or browse to select legal documents
-2. **AI Analysis** - Automated risk assessment across multiple categories
-3. **Results Dashboard** - Comprehensive scoring and visual analytics
-4. **Action & Collaboration** - Download reports, share analysis, save to library
-
-## 🎯 Target Audience
-
-- **Legal Professionals** - Lawyers, paralegals, legal assistants
-- **Law Firms** - Small to enterprise-level legal practices
-- **Corporate Legal Teams** - In-house legal departments
-- **Legal Consultants** - Independent legal advisors
-
-## 🚀 Getting Started (User Guide)
-
-### Document Analysis Process
-
-1. **Upload Your Document**
-   - Supported formats: PDF, DOC, DOCX, TXT
-   - Maximum file size: 50MB
-   - Batch processing available
-
-2. **AI Processing**
-   - Real-time progress tracking
-   - Processing time: 30-120 seconds
-   - Automated risk assessment
-
-3. **Review Results**
-   - Risk score: 0-100 scale
-   - Color-coded indicators
-   - Detailed recommendations
-
-
-![Sample Image](images/image3.png)
-
+The analysis provides:
+- **Overall Risk Score**: 0-100 scale (higher = more risk)
+- **Executive Summary**: Brief overview of findings
+- **Key Findings**: Major concerns identified
+- **Compliance Issues**: Regulatory red flags
+- **Recommendations**: Actionable next steps
 
 ### Risk Score Interpretation
 
@@ -197,45 +189,221 @@ src/
 - **🟡 31-70: Medium Risk** - Review recommended  
 - **🔴 71-100: High Risk** - Immediate attention required
 
-## 🔧 Development
+### Consulting Experts
+
+1. Click **"Consult Legal Expert"** button
+2. You'll be redirected to Calendly scheduling page
+3. Choose available time slot
+4. Receive confirmation and meeting details
+
+## 📁 Project Structure
+
+```
+legal-doc-analysis/
+├── src/
+│   ├── components/
+│   │   ├── ui/              # Shadcn UI components
+│   │   ├── Hero.tsx         # Landing hero section
+│   │   ├── Features.tsx     # Features showcase
+│   │   ├── DemoVideo.tsx    # Demo video section
+│   │   ├── DocumentUpload.tsx  # Upload interface
+│   │   └── RiskDashboard.tsx   # Risk visualization
+│   ├── pages/
+│   │   ├── Index.tsx        # Main landing page
+│   │   └── NotFound.tsx     # 404 page
+│   ├── integrations/
+│   │   └── supabase/        # Supabase client config
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions
+│   └── index.css            # Global styles
+├── supabase/
+│   ├── functions/
+│   │   └── analyze-document/  # Edge function for AI analysis
+│   └── config.toml          # Supabase configuration
+├── docs/                    # Documentation files
+├── images/                  # Screenshots and assets
+├── public/                  # Static assets
+└── README.md
+```
+
+## 🔧 API Documentation
+
+### Edge Functions
+
+#### `analyze-document`
+
+Analyzes legal documents using Gemini AI with optional translation.
+
+**Endpoint**: `/functions/v1/analyze-document`
+
+**Request Body**:
+```json
+{
+  "documentText": "string",
+  "fileName": "string",
+  "language": "en|hi|gu"
+}
+```
+
+**Response**:
+```json
+{
+  "overallRiskScore": 75,
+  "executiveSummary": "High-risk contract with several concerning clauses...",
+  "keyFindings": [
+    "Indemnification clause heavily favors counterparty",
+    "Termination provisions lack mutual reciprocity"
+  ],
+  "complianceIssues": [
+    "Payment terms exceed industry standard"
+  ],
+  "recommendations": [
+    "Negotiate liability limitations",
+    "Add mutual termination rights"
+  ]
+}
+```
+
+For complete API documentation, see [docs/API_DOCUMENTATION.md](./docs/API_DOCUMENTATION.md)
+
+## 📚 Documentation
+
+- [Project Overview](./docs/PROJECT_OVERVIEW.md)
+- [Technical Documentation](./docs/TECHNICAL_DOCUMENTATION.md)
+- [Features Guide](./docs/FEATURES_GUIDE.md)
+- [User Guide](./docs/USER_GUIDE.md)
+- [API Documentation](./docs/API_DOCUMENTATION.md)
+- [Presentation Slides](./docs/PRESENTATION_SLIDES.md)
+
+## 🎨 Design System
+
+The platform uses a comprehensive design system with:
+- **Color Tokens**: Semantic color variables for theming
+- **Typography**: Consistent font hierarchy
+- **Spacing**: Standard spacing scale
+- **Animations**: Smooth transitions and effects
+- **Components**: Reusable UI components
+
+See design tokens in `src/index.css` and `tailwind.config.ts`
+
+## 🔐 Security
+
+### Data Protection
+- All API calls use HTTPS
+- Documents encrypted at rest
+- Automatic deletion after analysis
+- No long-term data storage
+- Secure API key management via Supabase secrets
+
+### API Security
+- CORS protection enabled
+- Rate limiting on edge functions
+- Input validation and sanitization
+- Error handling without data leakage
+
+## 🧪 Testing
 
 ### Available Scripts
-
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript checks
 ```
 
-### Code Quality Standards
+### Manual Testing Checklist
+- [ ] Upload PDF document
+- [ ] Upload DOC/DOCX document
+- [ ] Test each language (EN, HI, GU)
+- [ ] Verify analysis results
+- [ ] Check Calendly integration
+- [ ] Test responsive design
+- [ ] Validate error handling
 
-- **ESLint** - Code consistency and quality
-- **TypeScript** - Type safety and better IDE support
-- **Component-driven** - Reusable, modular architecture
-- **Responsive Design** - Mobile-first approach
+## 🚀 Deployment
 
-### Performance Optimizations
+### Using Lovable
 
-- **Lazy Loading** - Components loaded on demand
-- **Bundle Splitting** - Optimized chunk sizes
-- **Image Optimization** - Responsive images
-- **Caching Strategy** - Browser caching for static assets
+1. Click **Publish** button (top right on desktop)
+2. Your app will be deployed automatically
+3. Receive deployment URL
 
-## 🔒 Security & Compliance
+### Custom Domain
 
-### Security Measures
-- 🔐 End-to-end encryption for data transmission
-- 🛡️ Role-based access controls
-- 🔍 Comprehensive audit trails
-- 🌐 Enterprise-grade hosting infrastructure
+1. Navigate to Project → Settings → Domains
+2. Add your custom domain
+3. Configure DNS settings
+4. SSL certificate auto-provisioned
 
-### Compliance Standards
-- **GDPR** - European data protection compliance
-- **CCPA** - California privacy law adherence
-- **SOC 2** - Security and availability standards
-- **Legal Industry** - Bar association guidelines
+### Environment Configuration
+
+All secrets are managed via Lovable Cloud:
+- Navigate to Cloud → Edge Functions
+- Configure required secrets
+- Secrets automatically available to edge functions
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow TypeScript best practices
+- Use semantic commit messages
+- Add tests for new features
+- Update documentation
+- Maintain design system consistency
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+Copyright (c) 2025 Simran Shaikh
+
+## 👥 Team
+
+**Simran Shaikh**
+- Developer & Creator
+- [msusimran20@gmail.com](mailto:msusimran20@gmail.com)
+- [Schedule Consultation](https://calendly.com/msusimran20/30min)
+
+## 🙏 Acknowledgments
+
+- **Google Gemini**: AI analysis engine
+- **Google Translate**: Multi-language support
+- **Shadcn/ui**: Component library
+- **Lovable**: Development platform
+- **Supabase**: Backend infrastructure
+
+## 📞 Support
+
+### Get Help
+- 📧 Email: msusimran20@gmail.com
+- 📅 Schedule Call: [Book 30-min consultation](https://calendly.com/msusimran20/30min)
+- 📚 Documentation: Check `/docs` folder
+- 🐛 Report Issues: GitHub Issues
+
+### FAQ
+
+**Q: What file formats are supported?**
+A: PDF, DOC, and DOCX files up to 10MB.
+
+**Q: How long does analysis take?**
+A: Typically under 2 minutes per document.
+
+**Q: Is my data secure?**
+A: Yes, all documents are encrypted and automatically deleted after analysis.
+
+**Q: Can I analyze documents in other languages?**
+A: Currently supports English, Hindi, and Gujarati. More languages coming soon.
+
+**Q: Do I need legal expertise to use this?**
+A: No, the platform is designed for all users. Expert consultation available when needed.
 
 ## 🌟 Business Value
 
@@ -252,18 +420,33 @@ npm run type-check   # Run TypeScript checks
 - **75,000+** Corporate legal departments
 - **85%** of legal professionals report document review bottlenecks
 
+## 🗺️ Roadmap
 
-## 📄 License
+### Q1 2025
+- [ ] Add more language support (Spanish, French, German)
+- [ ] Batch document comparison
+- [ ] Export analysis reports (PDF/DOCX)
+- [ ] Team collaboration features
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Q2 2025
+- [ ] Mobile app (iOS/Android)
+- [ ] Advanced analytics dashboard
+- [ ] Template library
+- [ ] Custom risk scoring rules
 
-## 🙏 Acknowledgments
-
-Built with modern web technologies and best practices to deliver a professional, scalable solution for the legal industry.
+### Future
+- [ ] Contract generation
+- [ ] Version comparison
+- [ ] AI-powered negotiation suggestions
+- [ ] Integration with legal management systems
 
 ---
 
 <p align="center">
-  <strong>Transform your legal document review process with AI-powered analysis</strong><br>
+  <strong>Built with ❤️ using Lovable, React, and AI</strong><br>
   <em>Delivering 80% time savings, consistent accuracy, and comprehensive risk insights</em>
+</p>
+
+<p align="center">
+  For more information, visit our <a href="./docs/">documentation</a> or <a href="https://calendly.com/msusimran20/30min">schedule a demo</a>.
 </p>
