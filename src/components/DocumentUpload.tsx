@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Upload, FileText, X, Shield, Clock, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface UploadedFile {
   id: string;
@@ -10,6 +11,7 @@ interface UploadedFile {
   size: number;
   type: string;
   uploadedAt: Date;
+  file: File;
 }
 
 const DocumentUpload = () => {
@@ -69,6 +71,7 @@ const DocumentUpload = () => {
         size: file.size,
         type: file.type,
         uploadedAt: new Date(),
+        file: file,
       };
 
       setUploadedFiles(prev => [...prev, newFile]);
@@ -84,7 +87,7 @@ const DocumentUpload = () => {
     setUploadedFiles(prev => prev.filter(file => file.id !== id));
   };
 
-  const startAnalysis = () => {
+  const startAnalysis = async () => {
     if (uploadedFiles.length === 0) {
       toast({
         title: "No Files Selected",
@@ -96,14 +99,61 @@ const DocumentUpload = () => {
 
     setIsAnalyzing(true);
     
-    // Simulate analysis
-    setTimeout(() => {
-      setIsAnalyzing(false);
+    try {
+      // Process each file
+      for (const fileData of uploadedFiles) {
+        // Read file content
+        const text = await readFileAsText(fileData.file);
+        
+        // Call edge function for analysis
+        const { data, error } = await supabase.functions.invoke('analyze-document', {
+          body: { 
+            documentText: text,
+            fileName: fileData.name 
+          }
+        });
+
+        if (error) {
+          console.error('Analysis error:', error);
+          toast({
+            title: "Analysis Failed",
+            description: `Failed to analyze ${fileData.name}: ${error.message}`,
+            variant: "destructive",
+          });
+        } else {
+          console.log('Analysis result:', data);
+          toast({
+            title: "Analysis Complete",
+            description: `${fileData.name} analyzed successfully. Risk Score: ${data.overallRiskScore}/100`,
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error during analysis:', error);
       toast({
-        title: "Analysis Complete",
-        description: "Your documents have been analyzed successfully.",
+        title: "Error",
+        description: "An error occurred during analysis.",
+        variant: "destructive",
       });
-    }, 3000);
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
+
+  const readFileAsText = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const result = e.target?.result;
+        if (typeof result === 'string') {
+          resolve(result);
+        } else {
+          reject(new Error('Failed to read file as text'));
+        }
+      };
+      reader.onerror = () => reject(reader.error);
+      reader.readAsText(file);
+    });
   };
 
   const formatFileSize = (bytes: number) => {
