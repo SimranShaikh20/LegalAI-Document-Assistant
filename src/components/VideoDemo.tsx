@@ -19,7 +19,7 @@ export const VideoDemo = () => {
             <div className="relative aspect-video">
               <iframe
                 className="absolute inset-0 h-full w-full rounded-lg"
-                src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
+                src="https://youtu.be/-aYSg89v1Ts"
                 title="LegalPro AI Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
