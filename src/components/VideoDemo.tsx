@@ -20,9 +20,11 @@ export const VideoDemo = () => {
               <video
                 className="h-full w-full rounded-lg object-cover"
                 controls
+                preload="metadata"
+                controlsList="nodownload"
                 poster="/videos/poster.jpg"
               >
-                <source src="/videos/demo.mp4" type="video/mp4" />
+                <source src="/videos/how-use-website.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
