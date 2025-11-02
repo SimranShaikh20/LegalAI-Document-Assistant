@@ -17,26 +17,13 @@ export const VideoDemo = () => {
         <div className="mx-auto max-w-5xl">
           <Card className="overflow-hidden border-2 shadow-xl">
             <div className="relative aspect-video">
-              <video
-                className="h-full w-full rounded-lg object-cover"
-                controls
-                preload="auto"
-                playsInline
-                controlsList="nodownload"
-                poster="/videos/poster.jpg"
-                onError={(e) => {
-                  console.error("Video loading error:", e);
-                }}
-              >
-                <source 
-                  src="/videos/how-use-website.mp4" 
-                  type="video/mp4"
-                  onError={(e) => {
-                    console.error("Source loading error:", e);
-                  }}
-                />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                className="absolute inset-0 h-full w-full rounded-lg"
+                src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
+                title="LegalPro AI Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </Card>
 
