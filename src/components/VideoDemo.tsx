@@ -20,11 +20,21 @@ export const VideoDemo = () => {
               <video
                 className="h-full w-full rounded-lg object-cover"
                 controls
-                preload="metadata"
+                preload="auto"
+                playsInline
                 controlsList="nodownload"
                 poster="/videos/poster.jpg"
+                onError={(e) => {
+                  console.error("Video loading error:", e);
+                }}
               >
-                <source src="/videos/how-use-website.mp4" type="video/mp4" />
+                <source 
+                  src="/videos/how-use-website.mp4" 
+                  type="video/mp4"
+                  onError={(e) => {
+                    console.error("Source loading error:", e);
+                  }}
+                />
                 Your browser does not support the video tag.
               </video>
             </div>
