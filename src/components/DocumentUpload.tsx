@@ -18,6 +18,7 @@ const DocumentUpload = () => {
   const [isDragOver, setIsDragOver] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
   const { toast } = useToast();
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -109,7 +110,8 @@ const DocumentUpload = () => {
         const { data, error } = await supabase.functions.invoke('analyze-document', {
           body: { 
             documentText: text,
-            fileName: fileData.name 
+            fileName: fileData.name,
+            language: selectedLanguage
           }
         });
 
@@ -214,6 +216,22 @@ const DocumentUpload = () => {
                       <p className="text-sm text-muted-foreground mb-4">
                         Supports PDF, DOC, DOCX up to 10MB
                       </p>
+                      
+                      {/* Language Selector */}
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Document Language
+                        </label>
+                        <select
+                          value={selectedLanguage}
+                          onChange={(e) => setSelectedLanguage(e.target.value)}
+                          className="w-full max-w-xs mx-auto px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        >
+                          <option value="en">English</option>
+                          <option value="hi">हिंदी (Hindi)</option>
+                          <option value="gu">ગુજરાતી (Gujarati)</option>
+                        </select>
+                      </div>
                     </div>
 
                     <input

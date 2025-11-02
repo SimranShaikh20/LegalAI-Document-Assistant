@@ -12,7 +12,7 @@ serve(async (req) => {
   }
 
   try {
-    const { documentText, fileName } = await req.json();
+    const { documentText, fileName, language } = await req.json();
     
     if (!documentText || !fileName) {
       return new Response(
@@ -22,6 +22,7 @@ serve(async (req) => {
     }
 
     const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
+    const GOOGLE_TRANSLATE_API_KEY = Deno.env.get('GOOGLE_TRANSLATE_API_KEY');
     
     if (!GEMINI_API_KEY) {
       console.error('GEMINI_API_KEY is not configured');
@@ -29,6 +30,43 @@ serve(async (req) => {
         JSON.stringify({ error: 'API key not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
+    }
+
+    // Translate to English if needed (supports Hindi, Gujarati)
+    let translatedText = documentText;
+    let detectedLanguage = language || 'en';
+    
+    if (GOOGLE_TRANSLATE_API_KEY && language && language !== 'en') {
+      console.log(`Translating document from ${language} to English...`);
+      
+      try {
+        const translateResponse = await fetch(
+          `https://translation.googleapis.com/language/translate/v2?key=${GOOGLE_TRANSLATE_API_KEY}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              q: documentText,
+              source: language,
+              target: 'en',
+              format: 'text'
+            }),
+          }
+        );
+
+        if (translateResponse.ok) {
+          const translateData = await translateResponse.json();
+          translatedText = translateData.data.translations[0].translatedText;
+          console.log('Translation successful');
+        } else {
+          console.error('Translation failed, proceeding with original text');
+        }
+      } catch (translateError) {
+        console.error('Translation error:', translateError);
+        // Continue with original text if translation fails
+      }
     }
 
     // Call Gemini API for document analysis
@@ -41,7 +79,7 @@ serve(async (req) => {
 5. Recommendations (actionable advice)
 
 Document: ${fileName}
-Content: ${documentText}
+${language !== 'en' ? `Original Language: ${language}\n` : ''}Content: ${translatedText}
 
 Provide your analysis in JSON format with these fields:
 {
